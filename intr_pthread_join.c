@@ -7,7 +7,7 @@
 
 int stop = 0;
 void* f(void* aaa) {
-    printf("in f, pid: %d", pthread_self());
+    printf("in f, pid: %d\n", pthread_self());
     while (stop == 0) {
        sleep(6);
        printf("f() errno: %d\n", errno);
@@ -41,6 +41,6 @@ int main() {
         ts.tv_sec += 5;
         ret = pthread_timedjoin_np(thread, NULL, &ts);
         printf("ret code: %d, errno: %d\n", ret, errno);
-        // sleep(5); // sleep can be interrupt, and set errno to EINTR.
+        // sleep(5); // sleep can be interrupted, and set errno to EINTR.
     }
 }

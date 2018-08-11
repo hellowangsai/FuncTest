@@ -1,5 +1,5 @@
 // g++ -std=c++14 template_must_specify.cc
-// view there is compile error
+// view compile errors
 
 // variable template since c++14
 // an alternative is use class template contains static value, like as std::integral_constant.

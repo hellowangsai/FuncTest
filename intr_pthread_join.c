@@ -1,3 +1,7 @@
+// gcc intr_pthread_join.c -pthread
+// ./a.out
+// press Ctrl + C, view the stdout. do more than once.
+
 #include <pthread.h>
 #include <stdio.h>
 #include <time.h>

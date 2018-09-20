@@ -8,7 +8,7 @@ constexpr bool FalseValue = false;
 
 template <class Cls>
 struct MustSpec {
-    static_assert(false, "this class template must specialize"); // compile error, must be a false depends template param `Cls`
+    // static_assert(false, "this class template must specialize"); // compile error, must be a false depends template param `Cls`
     static_assert(FalseValue<Cls>, "this class template must specialize"); // compile pass
 };
 
@@ -18,7 +18,7 @@ struct MustSpec<int> {
 
 int main() {
     MustSpec<int>   a;              // compile pass
-    MustSpec<float> b;              // compile error, trigger static_assert
+    // MustSpec<float> b;              // compile error, trigger static_assert
     using type1 = MustSpec<float>;  // compile pass
-    type1 c;                           // compile error, trigger static_assert
+    // type1 c;                           // compile error, trigger static_assert
 }
